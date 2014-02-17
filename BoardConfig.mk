@@ -25,7 +25,7 @@
 # against the traditional rules of inheritance).
 
 # inherit from common msm8960
--include device/htc/msm8960-common/BoardConfigCommon.mk
+include device/htc/msm8960-common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/dlx/include
 
@@ -64,12 +64,10 @@ USE_CAMERA_STUB := false
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
-COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Graphics
-TARGET_DISPLAY_INSECURE_MM_HEAP := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 
@@ -81,7 +79,6 @@ BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # Use libril in the device tree
 BOARD_PROVIDES_LIBRIL := true
-COMMON_GLOBAL_CFLAGS += -DNEW_LIBRIL_HTC
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
